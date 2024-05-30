@@ -2,5 +2,12 @@
     {
         "filename": "Hello.txt",
         "file": "Hello world"
+    },
+    {
+        "filename": "GoodNight.txt",
+        "file": "Good Night!!"
+    },
+    {
+        "filename": "Hello2.txt"
     }
 ]
