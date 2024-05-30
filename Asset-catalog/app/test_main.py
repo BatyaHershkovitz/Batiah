@@ -6,6 +6,7 @@ runner = CliRunner()
 
 def test_upload_success():
     result = runner.invoke(app, ["{'filename':'GoodNight.txt','file':'Good Night!!'}"])
+    print(result)
     assert result.exit_code == 0
     assert "Upload file is success!" in result.stdout
     
