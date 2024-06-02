@@ -5,7 +5,7 @@ import os
 import ast
 
 app = typer.Typer()
-watch_directory = '../watch.json'
+watch_directory = './watch.json'
 
 
 class Upload_asset:
