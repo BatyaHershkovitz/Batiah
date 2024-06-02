@@ -77,3 +77,4 @@ def upload_asset(asset: str = typer.Argument(..., callback=ast.literal_eval)):
 
 if __name__ == "__main__":
     app()
+    
