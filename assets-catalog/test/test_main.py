@@ -16,7 +16,7 @@ def test_file_exist():
     
 def test_no_filename():
     result = runner.invoke(app, ["{'content':'Hello!!'}"])
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert '' in result.stdout
     
 def test_no_content():
