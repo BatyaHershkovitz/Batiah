@@ -22,6 +22,6 @@ jobs:
           python -m pip install flake8 pydantic
           python -m pip install flake8 typer
       - name: Test with pytest
-        run: |
-          pytest
+        run: python -m pytest
+            
        
