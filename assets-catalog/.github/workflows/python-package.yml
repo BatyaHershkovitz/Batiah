@@ -2,7 +2,7 @@ name: Python package
 
 on:
   push:
-    branches: ["main"]
+    branches: ["feature/assets-catalog"]
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.9
+      - name: Set up Python 3.9 
         uses: actions/setup-python@v3
         with:
           python-version: 3.9
@@ -22,7 +22,6 @@ jobs:
           python -m pip install flake8 pydantic
           python -m pip install flake8 typer
       - name: Test with pytest
-        working-directory: './Asset-catalog/app'
         run: |
           pytest
-        
+       
