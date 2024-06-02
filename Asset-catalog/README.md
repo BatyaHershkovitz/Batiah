@@ -7,17 +7,17 @@ The goal of the assignment is to upload *assets* from any number of *remote clie
 ## Run
 
 ```cmd
-docker build -t <my_image> --rm .
+docker build -t <IMAGE> --rm .
 ```
 
 ```cmd
-docker run -it --name <my_app> --rm <my_image>
+docker run -it --name <APP_NAME> --rm <IMAGE>
 ```
 
 The bash will open:
 
 ```bash
-app_user@d9b446073cdc:/app:~$ python main.py "{'filename':'Hello.txt','file':'Hello world!!'}"
+app_user@d9b446073cdc:/app:~$ python main.py "{'filename':'Hello.txt','content':'Hello world!!'}"
 ```
 
 ## Run the tests
