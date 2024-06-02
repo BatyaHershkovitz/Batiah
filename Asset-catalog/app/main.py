@@ -24,9 +24,8 @@ class Upload_asset:
 
 def upload_file(asset):
     try:
-        write_to_cash(asset)
-        upload_to_server(asset)
-        return 'Upload file is success!'
+       if write_to_cash(asset) & upload_to_server(asset):
+          return 'Upload file is success!'
     except:
         return 'Upload file is failed!'
 
@@ -35,7 +34,7 @@ def write_to_cash(asset):
     try:
         with open(watch_directory) as data_file:
             asset_data = json.load(data_file)
-        asset_data.append(dict(asset["filename"]))
+        asset_data.append({"filename":asset["filename"]})
         with open(watch_directory, 'w') as json_file:
             json.dump(asset_data, json_file,
                       indent=4,
@@ -46,10 +45,10 @@ def write_to_cash(asset):
 
 
 def upload_to_server(asset):
-    try:
+    try:   
         if asset['filename']:
             fn = os.path.basename(asset['filename'])
-            open(fn, 'w').write(asset['file'])
+            open(fn, 'w').write(asset['content'])
         return True
     except:
         return False

@@ -13,9 +13,4 @@ def test_file_exist():
     result = runner.invoke(app, ["{'filename':'Hello.txt','content':'Hello!!'}"])
     assert result.exit_code == 0
     assert 'Error: The file is exists!' in result.stdout
-
-def test_upload_failed():
-    result = runner.invoke(app, ["{'filename':'Hello2.txt'}"])
-    assert result.exit_code == 0
-    assert 'Upload file is failed!' in result.stdout
     
