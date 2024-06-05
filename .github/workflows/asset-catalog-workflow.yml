@@ -1,0 +1,36 @@
+name: GitHub Actions Asset-Catalog
+run-name: With env variables
+on:
+  workflow_dispatch:
+  push:
+    branches: ["my"]
+    
+jobs:
+  Explore-GitHub-Actions:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to my branch
+        uses: actions/checkout@v4
+        with:
+          ref: "my"
+
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo SERVER_PATH="./src/dummy-server/" >> .env
+          echo CACHE_PATH="./src/cache.json" >> .env
+          echo NAME="hello.txt" >> .env
+          echo CONTENT="Hello!" >> .env
+          cat .env
+
+      - name: Build docker image
+        run: docker build -t asset_catalog .
+        working-directory: './asset-catalog'
+
+      - name: Run docker image
+        run: docker run --name ac_workflow asset_catalog 
+        working-directory: './asset-catalog'
+
