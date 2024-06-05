@@ -3,12 +3,14 @@ import typer
 import threading
 import os
 import ast
+from dotenv import load_dotenv
 
+load_dotenv()
 app = typer.Typer()
 # watch_directory = './watch.json'
 dir_path = os.path.dirname(os.path.realpath(__file__))
 watch_directory = os.path.join(dir_path, 'watch.json')
-
+print(os.getenv("ENV"))
 
 class Upload_asset:
     def __init__(self, initial__response=''):
