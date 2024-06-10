@@ -12,10 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Start containers
-      working-directory: 'compliance-status-checker'
-      run: docker-compose up
-
     - name: Install node
       uses: actions/setup-node@v1
       with:
@@ -28,3 +24,7 @@ jobs:
     - name: Run tests
       working-directory: 'compliance-status-checker/backend'
       run: npm run test
+
+    - name: Start containers
+      working-directory: 'compliance-status-checker'
+      run: docker-compose up

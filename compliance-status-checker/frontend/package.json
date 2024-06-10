@@ -17,7 +17,7 @@
     "react-scripts": "5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "test": "react-scripts --openssl-legacy-provider test"
   },
   "browserslist": {
