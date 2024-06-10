@@ -1,7 +1,8 @@
 require('dotenv').config();
-const { MongoClient } = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 const { MONGO_CONNECTION, MONGO_DB, MONGO_COLLECTION } = process.env
-const client = new MongoClient(MONGO_CONNECTION)
+const client = MongoClient.connect(MONGO_CONNECTION, (e, c) => c)
+
 
 class CMngOperation {
 
