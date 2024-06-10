@@ -27,4 +27,4 @@ jobs:
 
     - name: Start containers
       working-directory: 'compliance-status-checker'
-      run: docker-compose up
+      run: docker-compose up &
