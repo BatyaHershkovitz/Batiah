@@ -15,7 +15,7 @@ jobs:
     - name: Install node
       uses: actions/setup-node@v4
       with:
-        node-version: 18.x
+        node-version: '20.x'
 
     - name: Install dependencies
       working-directory: 'compliance-status-checker/backend'
@@ -25,6 +25,6 @@ jobs:
       working-directory: 'compliance-status-checker/backend'
       run: npm test
 
-    - name: Start containers
-      working-directory: 'compliance-status-checker'
-      run: docker-compose up
+    # - name: Start containers
+    #   working-directory: 'compliance-status-checker'
+    #   run: docker-compose up
