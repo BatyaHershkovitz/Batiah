@@ -23,7 +23,7 @@ jobs:
 
     - name: Run tests
       working-directory: 'compliance-status-checker/backend'
-      run: npm run test
+      run: npm test
 
     - name: Start containers
       working-directory: 'compliance-status-checker'
