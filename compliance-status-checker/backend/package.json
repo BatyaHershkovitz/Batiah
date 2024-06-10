@@ -15,7 +15,7 @@
     "supertest": "^7.0.0"
   },
   "scripts": {
-    "start": "cd src && npx nodemon",
+    "start": "node src/app.js",
     "test": "jest"
   }
 }
