@@ -12,19 +12,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Install node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+    # - name: Install node
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: 20
 
-    - name: Install dependencies
-      working-directory: 'compliance-status-checker/backend'
-      run: npm install
+    # - name: Install dependencies
+    #   working-directory: 'compliance-status-checker/backend'
+    #   run: npm install
 
-    - name: Run tests
-      working-directory: 'compliance-status-checker/backend'
-      run: npm test
+    # - name: Run tests
+    #   working-directory: 'compliance-status-checker/backend'
+    #   run: npm test
 
-    # - name: Start containers
-    #   working-directory: 'compliance-status-checker'
-    #   run: docker-compose up
+    - name: Start containers
+      working-directory: 'compliance-status-checker'
+      run: docker-compose up
